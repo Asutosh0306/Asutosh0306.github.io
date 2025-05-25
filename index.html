@@ -65,6 +65,21 @@
             border-bottom-color: #1e3a8a;
         }
 
+        /* Section Alternating Colors */
+        .section {
+            padding: 50px 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section:nth-child(odd) {
+            background-color: #f5f5f5;
+        }
+
+        .section:nth-child(even) {
+            background-color: #e8e8e8;
+        }
+
         /* Hero Section */
         .hero {
             background-color: #f5f5f5;
@@ -149,25 +164,40 @@
             font-size: 1.2em;
             position: relative;
             cursor: pointer;
+            overflow: hidden;
         }
 
         .country-circle.india {
-            background: linear-gradient(to bottom, #ff9933 33%, #ffffff 33%, #ffffff 66%, #138808 66%);
+            background: linear-gradient(to bottom, #FF9933 33.33%, #FFFFFF 33.33%, #FFFFFF 66.67%, #138808 66.67%);
         }
 
         .country-circle.saudi {
-            background: linear-gradient(to bottom, #006c35 50%, #ffffff 50%);
-            color: #006c35;
+            background: linear-gradient(to bottom, #006C35 50%, #FFFFFF 50%);
+            position: relative;
+        }
+
+        .country-circle.saudi::after {
+            content: '☪';
+            position: absolute;
+            color: #006C35;
+            font-size: 16px;
         }
 
         .country-circle.uk {
-            background: linear-gradient(45deg, #012169 25%, transparent 25%), 
-                        linear-gradient(-45deg, #012169 25%, transparent 25%), 
-                        linear-gradient(45deg, transparent 75%, #012169 75%), 
-                        linear-gradient(-45deg, transparent 75%, #012169 75%),
-                        linear-gradient(to right, #ce1126 40%, #ffffff 40%, #ffffff 60%, #ce1126 60%),
-                        linear-gradient(to bottom, #ce1126 40%, #ffffff 40%, #ffffff 60%, #ce1126 60%);
-            background-size: 15px 15px, 15px 15px, 15px 15px, 15px 15px, 100% 100%, 100% 100%;
+            background: #012169;
+            position: relative;
+        }
+
+        .country-circle.uk::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: 
+                linear-gradient(to right, transparent 40%, #FFFFFF 40%, #FFFFFF 45%, #CE1126 45%, #CE1126 55%, #FFFFFF 55%, #FFFFFF 60%, transparent 60%),
+                linear-gradient(to bottom, transparent 40%, #FFFFFF 40%, #FFFFFF 45%, #CE1126 45%, #CE1126 55%, #FFFFFF 55%, #FFFFFF 60%, transparent 60%),
+                linear-gradient(45deg, transparent 48%, #FFFFFF 48%, #FFFFFF 50%, #CE1126 50%, #CE1126 52%, #FFFFFF 52%, transparent 52%),
+                linear-gradient(-45deg, transparent 48%, #FFFFFF 48%, #FFFFFF 50%, #CE1126 50%, #CE1126 52%, #FFFFFF 52%, transparent 52%);
         }
 
         .country-tooltip {
@@ -199,13 +229,6 @@
             border: 4px solid #1e3a8a;
         }
 
-        /* Section Styling */
-        .section {
-            padding: 50px 40px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
         .section-title {
             font-size: 2.5em;
             color: #333333;
@@ -214,13 +237,13 @@
         }
 
         /* Experience Items */
-        .experience-item, .education-item, .project-item, .award-item, .cert-item {
+        .experience-item, .education-item, .project-item, .award-item, .cert-item, .activity-item {
             margin-bottom: 40px;
             padding-bottom: 30px;
-            border-bottom: 1px solid #e5e5e5;
+            border-bottom: 1px solid #d0d0d0;
         }
 
-        .experience-item:last-child, .education-item:last-child, .project-item:last-child, .award-item:last-child, .cert-item:last-child {
+        .experience-item:last-child, .education-item:last-child, .project-item:last-child, .award-item:last-child, .cert-item:last-child, .activity-item:last-child {
             border-bottom: none;
         }
 
@@ -318,19 +341,28 @@
         .education-header {
             display: flex;
             align-items: center;
-            gap: 20px;
+            justify-content: space-between;
             margin-bottom: 15px;
-        }
-
-        .university-logo {
-            width: 60px;
-            height: 60px;
-            object-fit: contain;
-            border-radius: 8px;
+            gap: 20px;
         }
 
         .education-info {
             flex: 1;
+        }
+
+        .university-logo {
+            width: 120px;
+            height: 80px;
+            object-fit: contain;
+            border-radius: 8px;
+            flex-shrink: 0;
+        }
+
+        /* Project Details */
+        .project-description {
+            color: #555555;
+            margin-bottom: 15px;
+            line-height: 1.6;
         }
 
         /* Skills Grid */
@@ -383,24 +415,46 @@
             color: #1e40af;
         }
 
-        /* Award Styling */
+        /* Awards and Certifications Grid */
+        .awards-grid, .certs-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .award-card, .cert-card {
+            background-color: white;
+            padding: 25px;
+            border-radius: 12px;
+            border: 2px solid #e5e5e5;
+            transition: all 0.3s ease;
+        }
+
+        .award-card:hover, .cert-card:hover {
+            border-color: #1e3a8a;
+            box-shadow: 0 4px 12px rgba(30, 58, 138, 0.1);
+        }
+
         .award-title, .cert-title {
             font-size: 1.2em;
             color: #1e3a8a;
             font-weight: 600;
-            margin-bottom: 8px;
+            margin-bottom: 12px;
+            line-height: 1.4;
         }
 
         .award-description, .cert-description {
             color: #555555;
-            margin-bottom: 8px;
+            margin-bottom: 12px;
             line-height: 1.6;
+            font-size: 0.95em;
         }
 
         .award-date, .cert-date {
             color: #666666;
             font-weight: 500;
-            font-size: 0.95em;
+            font-size: 0.9em;
         }
 
         /* Footer */
@@ -463,6 +517,21 @@
             .countries-lived {
                 justify-content: center;
             }
+
+            .awards-grid, .certs-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .university-logo {
+                width: 100px;
+                height: 65px;
+            }
+        }
+
+        @media (max-width: 1024px) and (min-width: 769px) {
+            .awards-grid, .certs-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
         }
     </style>
 </head>
@@ -474,6 +543,7 @@
             <a href="#experience" class="nav-tab">Experience</a>
             <a href="#education" class="nav-tab">Education</a>
             <a href="#projects" class="nav-tab">Projects</a>
+            <a href="#activities" class="nav-tab">Activities</a>
             <a href="#skills" class="nav-tab">Skills</a>
             <a href="#awards" class="nav-tab">Awards</a>
             <a href="#certifications" class="nav-tab">Certifications</a>
@@ -518,7 +588,7 @@
             <img src="profile_pic.png" alt="Asutosh Samal" class="profile-image">
         </header>
 
-        <!-- About Section (continued in hero) -->
+        <!-- About Section -->
         <section class="section">
             <p style="font-size: 1.1em; color: #555555; line-height: 1.8; margin-bottom: 20px;">
                 Experienced Data Engineer skilled in building robust data ecosystems, from ingestion to insights. 
@@ -528,7 +598,7 @@
             <p style="font-size: 1.1em; color: #555555; line-height: 1.8;">
                 With over 3 years of professional experience at Oracle Financial Services, I have successfully architected 
                 and implemented large-scale data pipelines, led data lake migration projects, and delivered impactful solutions 
-                that have improved processing efficiency by up to 25% for enterprise clients.
+                that improved processing efficiency by up to 25% for enterprise clients.
             </p>
         </section>
 
@@ -550,11 +620,11 @@
                 </div>
                 <div class="work-details">
                     <ul>
-                        <li>Architected 20 end-to-end data pipelines using Azure Data Factory, Synapse Analytics, and Power BI. Collaborated with 5 business units to standardise data workflows, processing 10GB daily data.</li>
-                        <li>Delivered data lake migration project, implementing a cumulative 150 Apache Spark and HDFS pipelines for a leading national bank. The project boosted their processing efficiency by 25% and centralised data into a scalable data lake, migrating from Informatica.</li>
-                        <li>Automated data mapping evaluation for Oracle's internal EAsMAP project by utilizing 2 classification models. This approach reduced the turnaround time for the initial data assessment by 50%, optimising the overall data mapping process.</li>
-                        <li>Built 6 profitability mappings using Informatica, streamlining data workflows for enhanced efficiency. Created 4 interactive client reports using BIP and Power BI, improving data visualisation for clients.</li>
-                        <li>Represented the Data Lake Migration project during a three-month client site visit in Saudi Arabia. Delivered a detailed presentation to the on-site team, including the client's CFO, outlining project challenges and progress.</li>
+                        <li>Architected 20+ end-to-end data pipelines using Azure Data Factory, Synapse Analytics, and Power BI, collaborating with 5 business units to standardize data workflows and process 10GB of daily data efficiently.</li>
+                        <li>Led a comprehensive data lake migration project, implementing 150+ Apache Spark and HDFS pipelines for a leading national bank, resulting in 25% improved processing efficiency and centralized data architecture.</li>
+                        <li>Developed automated data mapping solutions for Oracle's internal EAsMAP project using machine learning classification models, reducing initial data assessment time by 50% and optimizing the overall mapping process.</li>
+                        <li>Designed and built 6 profitability mapping solutions using Informatica while creating 4 interactive client dashboards with BIP and Power BI, significantly enhancing data visualization capabilities for stakeholders.</li>
+                        <li>Represented the Data Lake Migration project during a strategic three-month client engagement in Saudi Arabia, delivering executive presentations to senior leadership including the CFO and successfully managing project deliverables.</li>
                     </ul>
                 </div>
             </div>
@@ -573,8 +643,8 @@
                 </div>
                 <div class="work-details">
                     <ul>
-                        <li>Facilitated a shift to online sales for NEEV during the coronavirus outbreak by establishing and maintaining the brand's website using Shopify, resulting in a 50% increase in sales.</li>
-                        <li>Managed social media profiles on Facebook, LinkedIn, and Instagram to enhance brand visibility.</li>
+                        <li>Successfully transitioned NEEV to online sales during the COVID-19 pandemic by establishing and maintaining their e-commerce website using Shopify, achieving a 50% increase in sales revenue.</li>
+                        <li>Managed comprehensive social media strategy across Facebook, LinkedIn, and Instagram platforms to enhance brand visibility and customer engagement.</li>
                     </ul>
                 </div>
             </div>
@@ -586,7 +656,6 @@
             
             <div class="education-item">
                 <div class="education-header">
-                    <img src="UoE.jpg" alt="University of Edinburgh" class="university-logo">
                     <div class="education-info">
                         <div class="item-company">The University of Edinburgh</div>
                         <div class="item-title">MSc in Data Science</div>
@@ -594,16 +663,14 @@
                             <span class="item-date">Sept 2024 – Aug 2025</span>
                             <span class="item-location">United Kingdom</span>
                         </div>
+                        <p style="color: #555555; font-size: 1.05em; margin-top: 10px;"><strong>Grade:</strong> Merit (Expected)</p>
                     </div>
-                </div>
-                <div class="item-description">
-                    <p style="color: #555555; font-size: 1.05em;"><strong>Grade:</strong> Merit (Expected)</p>
+                    <img src="UoE.jpg" alt="University of Edinburgh" class="university-logo">
                 </div>
             </div>
 
             <div class="education-item">
                 <div class="education-header">
-                    <img src="VIT.jpg" alt="Vellore Institute of Technology" class="university-logo">
                     <div class="education-info">
                         <div class="item-company">Vellore Institute of Technology</div>
                         <div class="item-title">BTech in Electrical and Electronics Engineering</div>
@@ -611,10 +678,9 @@
                             <span class="item-date">July 2017 – June 2021</span>
                             <span class="item-location">India</span>
                         </div>
+                        <p style="color: #555555; font-size: 1.05em; margin-top: 10px;"><strong>CGPA:</strong> 8.47/10</p>
                     </div>
-                </div>
-                <div class="item-description">
-                    <p style="color: #555555; font-size: 1.05em;"><strong>CGPA:</strong> 8.47/10</p>
+                    <img src="VIT.jpg" alt="Vellore Institute of Technology" class="university-logo">
                 </div>
             </div>
         </section>
@@ -627,22 +693,20 @@
                 <div class="item-header">
                     <div class="item-title">BlazeDB Query Engine</div>
                 </div>
-                <div class="item-description">
-                    <p style="color: #555555; margin-bottom: 15px;">
-                        Developed Java-based SQL engine supporting 5 core operators (scan, select, join, aggregate, sort) with type-safe tuple handling. 
-                        Optimised query execution through predicate pushdown and left-deep join ordering, achieving 40% faster query response times.
-                    </p>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Java</span>
-                        <span class="skill-tag">SQL</span>
-                        <span class="skill-tag">Query Optimization</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="https://github.com/Asutosh0306/BlazeDB" class="project-link" target="_blank">
-                            <i class="fab fa-github"></i>
-                            <span>View on GitHub</span>
-                        </a>
-                    </div>
+                <div class="project-description">
+                    Developed a high-performance Java-based SQL engine supporting 5 core database operators including scan, select, join, aggregate, and sort operations with comprehensive type-safe tuple handling. The engine implements advanced query optimization techniques such as predicate pushdown and left-deep join ordering, achieving 40% faster query response times compared to baseline implementations.
+                </div>
+                <div class="skill-tags">
+                    <span class="skill-tag">Java</span>
+                    <span class="skill-tag">SQL</span>
+                    <span class="skill-tag">Query Optimization</span>
+                    <span class="skill-tag">Database Systems</span>
+                </div>
+                <div class="project-links">
+                    <a href="https://github.com/Asutosh0306/BlazeDB" class="project-link" target="_blank">
+                        <i class="fab fa-github"></i>
+                        <span>View on GitHub</span>
+                    </a>
                 </div>
             </div>
 
@@ -650,24 +714,62 @@
                 <div class="item-header">
                     <div class="item-title">Cloud-Native Analytics Pipeline on AWS</div>
                 </div>
+                <div class="project-description">
+                    Built a comprehensive serverless data analytics pipeline leveraging AWS cloud services including S3 for storage, Glue for ETL processing, Athena for querying, and QuickSight for visualization. The pipeline processes Superstore sales data with automated ETL workflows, intelligent data partitioning strategies, and interactive business intelligence dashboards for real-time insights.
+                </div>
+                <div class="skill-tags">
+                    <span class="skill-tag">AWS</span>
+                    <span class="skill-tag">S3</span>
+                    <span class="skill-tag">Glue</span>
+                    <span class="skill-tag">Athena</span>
+                    <span class="skill-tag">QuickSight</span>
+                    <span class="skill-tag">ETL</span>
+                </div>
+                <div class="project-links">
+                    <a href="https://github.com/Asutosh0306/aws_s3" class="project-link" target="_blank">
+                        <i class="fab fa-github"></i>
+                        <span>View on GitHub</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Extra-Curricular Activities Section -->
+        <section class="section" id="activities">
+            <h2 class="section-title">Extra-Curricular Activities</h2>
+            
+            <div class="activity-item">
+                <div class="item-header">
+                    <div class="item-company">RIVIERA Annual Cultural Fest - VIT</div>
+                    <div class="item-title">Student Coordinator</div>
+                    <div class="item-meta">
+                        <span class="item-date">2018-2020</span>
+                        <span class="item-location">India</span>
+                    </div>
+                </div>
                 <div class="item-description">
-                    <p style="color: #555555; margin-bottom: 15px;">
-                        Built a scalable serverless data pipeline using AWS S3, Glue, Athena, and QuickSight. 
-                        Leveraged these technologies to analyse Superstore sales data with automated ETL, partitioned storage, and interactive dashboards.
-                    </p>
-                    <div class="skill-tags">
-                        <span class="skill-tag">AWS</span>
-                        <span class="skill-tag">S3</span>
-                        <span class="skill-tag">Glue</span>
-                        <span class="skill-tag">Athena</span>
-                        <span class="skill-tag">QuickSight</span>
+                    <ul>
+                        <li>Served as Student Coordinator for the Proshows committee during RIVIERA, VIT's prestigious International Annual Sports and Cultural Festival.</li>
+                        <li>Successfully managed end-to-end event logistics including artist coordination, stage setup, technical arrangements, and operational management, ensuring seamless event execution and high client satisfaction.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="activity-item">
+                <div class="item-header">
+                    <div class="item-company">NEEV (NGO)</div>
+                    <div class="item-title">Volunteer</div>
+                    <div class="item-meta">
+                        <span class="item-date">2020-2021</span>
+                        <span class="item-location">India</span>
                     </div>
-                    <div class="project-links">
-                        <a href="https://github.com/Asutosh0306/aws_s3" class="project-link" target="_blank">
-                            <i class="fab fa-github"></i>
-                            <span>View on GitHub</span>
-                        </a>
-                    </div>
+                </div>
+                <div class="item-description">
+                    <ul>
+                        <li>Mentored over 50 children in Mathematics and English, achieving an impressive 80% pass rate in their school examinations through personalized tutoring and educational support.</li>
+                        <li>Led a community health initiative team to vaccinate more than 100 cattle against lumpy skin disease, contributing to livestock welfare and community health in the region.</li>
+                        <li>Organized and executed four large-scale food distribution drives, providing essential support to over 1,000 individuals and families in need during challenging times.</li>
+                    </ul>
                 </div>
             </div>
         </section>
@@ -721,46 +823,48 @@
         <!-- Awards Section -->
         <section class="section" id="awards">
             <h2 class="section-title">Awards & Recognition</h2>
-            
-            <div class="award-item">
-                <div class="award-title">FSGBU Pacesetter Award for Q2FY23</div>
-                <div class="award-description">Recognised for commitment and significant impact on the success of the client's Data Lake Migration project.</div>
-                <div class="award-date">January 2023</div>
-            </div>
+            <div class="awards-grid">
+                <div class="award-card">
+                    <div class="award-title">FSGBU Pacesetter Award for Q2FY23</div>
+                    <div class="award-description">Recognized for exceptional commitment and significant impact on the success of the client's Data Lake Migration project.</div>
+                    <div class="award-date">January 2023</div>
+                </div>
 
-            <div class="award-item">
-                <div class="award-title">Pat on the Back Award</div>
-                <div class="award-description">Received for outstanding individual contribution to project success.</div>
-                <div class="award-date">September 2022</div>
-            </div>
+                <div class="award-card">
+                    <div class="award-title">Pat on the Back Award</div>
+                    <div class="award-description">Received for outstanding individual contribution to project success.</div>
+                    <div class="award-date">September 2022</div>
+                </div>
 
-            <div class="award-item">
-                <div class="award-title">TIMKEN Global Scholar</div>
-                <div class="award-description">Awarded a scholarship in recognition of academic and extracurricular excellence for undergraduate studies.</div>
-                <div class="award-date">January 2017</div>
+                <div class="award-card">
+                    <div class="award-title">TIMKEN Global Scholar</div>
+                    <div class="award-description">Awarded scholarship in recognition of academic and extracurricular excellence for undergraduate studies.</div>
+                    <div class="award-date">January 2017</div>
+                </div>
             </div>
         </section>
 
         <!-- Certifications Section -->
         <section class="section" id="certifications">
             <h2 class="section-title">Certifications</h2>
-            
-            <div class="cert-item">
-                <div class="cert-title">Oracle Cloud Infrastructure Foundations</div>
-                <div class="cert-description">Oracle Certification</div>
-                <div class="cert-date">June 2022</div>
-            </div>
+            <div class="certs-grid">
+                <div class="cert-card">
+                    <div class="cert-title">Oracle Cloud Infrastructure Foundations</div>
+                    <div class="cert-description">Oracle Certification</div>
+                    <div class="cert-date">June 2022</div>
+                </div>
 
-            <div class="cert-item">
-                <div class="cert-title">Neural Networks for Machine Learning</div>
-                <div class="cert-description">University of Toronto</div>
-                <div class="cert-date">April 2019</div>
-            </div>
+                <div class="cert-card">
+                    <div class="cert-title">Neural Networks for Machine Learning</div>
+                    <div class="cert-description">University of Toronto</div>
+                    <div class="cert-date">April 2019</div>
+                </div>
 
-            <div class="cert-item">
-                <div class="cert-title">Introduction to Graph Theory</div>
-                <div class="cert-description">University of California San Diego</div>
-                <div class="cert-date">November 2018</div>
+                <div class="cert-card">
+                    <div class="cert-title">Introduction to Graph Theory</div>
+                    <div class="cert-description">University of California San Diego</div>
+                    <div class="cert-date">November 2018</div>
+                </div>
             </div>
         </section>
 
@@ -809,7 +913,7 @@
 
         // Update active nav tab on scroll
         window.addEventListener('scroll', () => {
-            const sections = ['about', 'experience', 'education', 'projects', 'skills', 'awards', 'certifications'];
+            const sections = ['about', 'experience', 'education', 'projects', 'activities', 'skills', 'awards', 'certifications'];
             const scrollPos = window.scrollY + 100;
             
             sections.forEach(sectionId => {
