@@ -288,12 +288,14 @@
             margin-bottom: 15px;
             font-size: 1.2em;
             font-weight: 600;
+            text-align: center;
         }
 
         .skill-tags {
             display: flex;
             flex-wrap: wrap;
             gap: 10px;
+            justify-content: center;
         }
 
         .skill-tag {
@@ -442,10 +444,6 @@
 
             .skill-category h3 {
                 text-align: center;
-            }
-
-            .skill-tags {
-                justify-content: center;
             }
 
             .education-header {
@@ -847,3 +845,49 @@
                     window.scrollTo({
                         top: offsetTop,
                         behavior: 'smooth'
+                    });
+                }
+                
+                // Update active nav tab
+                document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+
+        // Toggle work details for experience section
+        function toggleWorkDetails(header) {
+            const workDetails = header.nextElementSibling;
+            const expandIcon = header.querySelector('.expand-icon');
+            
+            if (workDetails.classList.contains('expanded')) {
+                workDetails.classList.remove('expanded');
+                expandIcon.classList.remove('expanded');
+            } else {
+                workDetails.classList.add('expanded');
+                expandIcon.classList.add('expanded');
+            }
+        }
+
+        // Update active nav tab on scroll
+        window.addEventListener('scroll', () => {
+            const sections = ['about', 'experience', 'education', 'projects', 'activities', 'skills', 'awards', 'certifications'];
+            const scrollPos = window.scrollY + 100;
+            
+            sections.forEach(sectionId => {
+                const section = document.getElementById(sectionId);
+                if (section) {
+                    const sectionTop = section.offsetTop;
+                    const sectionHeight = section.offsetHeight;
+                    
+                    if (scrollPos >= sectionTop && scrollPos < sectionTop + sectionHeight) {
+                        document.querySelectorAll('.nav-tab').forEach(tab => {
+                            tab.classList.remove('active');
+                            if (tab.getAttribute('href') === `#${sectionId}`) {
+                                tab.classList.add('active');
+                            }
+                        });
+                    }
+                }
+            });
+        });
+    </script>
