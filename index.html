@@ -596,28 +596,25 @@
         }
     </style>
 </head>
+    
 <body>
-    <!-- Background Animation -->
     <div class="background-animation">
         <div class="gradient-orb orb1"></div>
         <div class="gradient-orb orb2"></div>
         <div class="gradient-orb orb3"></div>
     </div>
 
-    <!-- Particles -->
-    <div class="particles" id="particles"></div>
-
-    <!-- Navigation -->
-    <nav id="navbar">
+    <nav>
         <div class="nav-container">
             <div class="nav-links">
-                <a href="#hero" class="nav-link active">Home</a>
+                <a href="#home" class="nav-link active">Home</a>
                 <a href="#about" class="nav-link">About</a>
                 <a href="#skills" class="nav-link">Skills</a>
                 <a href="#experience" class="nav-link">Experience</a>
                 <a href="#education" class="nav-link">Education</a>
                 <a href="#projects" class="nav-link">Projects</a>
                 <a href="#hobbies" class="nav-link">Hobbies</a>
+                <a href="#activities" class="nav-link">Activities</a>
                 <a href="#awards" class="nav-link">Awards</a>
                 <a href="#certifications" class="nav-link">Certifications</a>
                 <a href="#contact" class="nav-link">Contact</a>
@@ -625,237 +622,343 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section class="hero" id="hero">
+    <section id="home" class="hero">
         <div class="hero-content">
-            <p class="hero-subtitle">Hello, I'm</p>
+            <h2 class="hero-subtitle">Hello, I'm</h2>
             <h1 class="hero-title">Asutosh Samal</h1>
             <p class="hero-description">Data Engineer passionate about building robust data ecosystems and creating data-driven solutions that drive business value</p>
             <div class="hero-cta">
-                <a href="#contact" class="btn btn-primary">
-                    <i class="fas fa-envelope"></i>
-                    Get In Touch
-                </a>
-                <a href="#projects" class="btn btn-secondary">
-                    <i class="fas fa-folder"></i>
-                    View Projects
-                </a>
+                <a href="#contact" class="btn btn-primary"><i class="fas fa-envelope"></i> Get In Touch</a>
+                <a href="#projects" class="btn btn-secondary"><i class="fas fa-code"></i> View Projects</a>
             </div>
         </div>
     </section>
 
-    <!-- About Section -->
-    <section class="section reveal" id="about">
+    <section id="about" class="section">
         <h2 class="section-title">About Me</h2>
-        <p class="section-subtitle">Getting to know me better</p>
-        <div class="about-content">
+        <h3 class="section-subtitle">Getting to know me better</h3>
+        <div class="about-content reveal">
             <div class="about-text">
-                <p>I'm a passionate Data Engineer with over 3 years of experience at Oracle Financial Services, where I've architected and implemented large-scale data pipelines and led successful data lake migration projects.</p>
-                <p>Currently pursuing my MSc in Data Science at The University of Edinburgh, I'm constantly exploring new technologies and methodologies in cloud platforms, big data processing, and machine learning.</p>
-                <p>My journey has taken me from India to Saudi Arabia, working with enterprise clients and delivering solutions that improved processing efficiency by up to 25%. I believe in the power of data to transform businesses and drive innovation.</p>
+                <p>Experienced Data Engineer skilled in building robust data ecosystems, from ingestion to insights. Passionate about cloud platforms, big data processing, and creating data-driven solutions that drive business value. Currently pursuing MSc in Data Science at The University of Edinburgh.</p>
+                <p>With over 3 years of professional experience at Oracle Financial Services, I have successfully architected and implemented large-scale data pipelines, led data lake migration projects, and delivered impactful solutions that improved processing efficiency by up to 25% for enterprise clients.</p>
+                <p>My journey has taken me from India to Saudi Arabia, working with enterprise clients and delivering solutions that drive innovation.</p>
             </div>
             <div class="about-image">
                 <div class="profile-image-container">
-                    <img src="profile_pic.png" alt="Asutosh Samal" class="profile-image">
+                    <img src="profile.jpg" alt="Asutosh Samal" class="profile-image">
                     <div class="image-decoration"></div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Skills Section -->
-    <section class="section reveal" id="skills">
+    <section id="skills" class="section">
         <h2 class="section-title">Technical Skills</h2>
-        <p class="section-subtitle">Technologies I work with</p>
-        <div class="skills-container">
-            <!-- Skill cards remain same as before -->
+        <h3 class="section-subtitle">Technologies I work with</h3>
+        <div class="skills-container reveal">
+            <div class="skill-card">
+                <i class="fas fa-code skill-icon"></i>
+                <h4 class="skill-title">Programming Languages</h4>
+                <ul class="skill-list">
+                    <li>Python</li>
+                    <li>Java</li>
+                    <li>Scala</li>
+                    <li>SQL</li>
+                    <li>HiveQL</li>
+                </ul>
+            </div>
+            <div class="skill-card">
+                <i class="fas fa-database skill-icon"></i>
+                <h4 class="skill-title">Data & Analytics</h4>
+                <ul class="skill-list">
+                    <li>MongoDB</li>
+                    <li>Numpy</li>
+                    <li>Pandas</li>
+                    <li>Hadoop</li>
+                    <li>Spark</li>
+                    <li>PySpark</li>
+                </ul>
+            </div>
+            <div class="skill-card">
+                <i class="fas fa-cloud skill-icon"></i>
+                <h4 class="skill-title">Cloud & Platforms</h4>
+                <ul class="skill-list">
+                    <li>Microsoft Azure</li>
+                    <li>Data Factory</li>
+                    <li>Synapse</li>
+                    <li>Databricks</li>
+                </ul>
+            </div>
+            <div class="skill-card">
+                <i class="fas fa-chart-line skill-icon"></i>
+                <h4 class="skill-title">Visualization & Tools</h4>
+                <ul class="skill-list">
+                    <li>Power BI</li>
+                    <li>BIP</li>
+                    <li>Informatica</li>
+                    <li>LaTeX</li>
+                </ul>
+            </div>
         </div>
     </section>
 
-    <!-- Experience Section -->
-    <section class="section reveal" id="experience">
+    <section id="experience" class="section">
         <h2 class="section-title">Experience</h2>
-        <p class="section-subtitle">Professional Journey</p>
-        
-        <div class="experience-item">
-            <div class="item-header" onclick="toggleWorkDetails(this)">
-                <div>
-                    <div class="item-company">Oracle Financial Services Software Limited</div>
-                    <div class="item-title">Associate Consultant - Data Engineer</div>
-                    <div class="item-meta">
-                        <span>Aug 2021 – May 2024</span>
-                        <span>India and Saudi Arabia</span>
+        <h3 class="section-subtitle">My professional journey</h3>
+        <div class="experience-content reveal">
+            <div class="experience-item">
+                <div class="item-header">
+                    <div>
+                        <h4 class="item-company">Oracle Financial Services Software Limited</h4>
+                        <h5 class="item-title">Associate Consultant - Data Engineer</h5>
+                        <div class="item-meta">
+                            <span>Aug 2021 – May 2024</span>
+                            <span>India and Saudi Arabia</span>
+                        </div>
                     </div>
+                    <i class="fas fa-chevron-down expand-icon"></i>
                 </div>
-                <i class="fas fa-chevron-down expand-icon"></i>
+                <div class="work-details">
+                    <ul>
+                        <li>Architected 20+ end-to-end data pipelines using Azure Data Factory, Synapse Analytics, and Power BI, collaborating with 5 business units to standardize data workflows and process 10GB of daily data efficiently.</li>
+                        <li>Led a comprehensive data lake migration project, implementing 150+ Apache Spark and HDFS pipelines for a leading national bank, resulting in 25% improved processing efficiency and centralized data architecture.</li>
+                        <li>Developed automated data mapping solutions for Oracle's internal EAsMAP project using machine learning classification models, reducing initial data assessment time by 50% and optimizing the overall mapping process.</li>
+                        <li>Designed and built 6 profitability mapping solutions using Informatica while creating 4 interactive client dashboards with BIP and Power BI, significantly enhancing data visualization capabilities for stakeholders.</li>
+                        <li>Represented the Data Lake Migration project during a strategic three-month client engagement in Saudi Arabia, delivering executive presentations to senior leadership including the CFO and successfully managing project deliverables.</li>
+                    </ul>
+                </div>
             </div>
-            <div class="work-details">
-                <ul>
-                    <li>Architected 20+ end-to-end data pipelines using Azure Data Factory</li>
-                    <li>Led comprehensive data lake migration project</li>
-                    <li>Developed automated data mapping solutions</li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="experience-item">
-            <div class="item-header" onclick="toggleWorkDetails(this)">
-                <div>
-                    <div class="item-company">NEEV</div>
-                    <div class="item-title">E-Commerce and Digital Marketing Intern</div>
-                    <div class="item-meta">
-                        <span>May 2020 – July 2021</span>
-                        <span>India</span>
+            <div class="experience-item">
+                <div class="item-header">
+                    <div>
+                        <h4 class="item-company">NEEV</h4>
+                        <h5 class="item-title">E-Commerce and Digital Marketing Intern</h5>
+                        <div class="item-meta">
+                            <span>May 2020 – July 2021</span>
+                            <span>India</span>
+                        </div>
                     </div>
+                    <i class="fas fa-chevron-down expand-icon"></i>
                 </div>
-                <i class="fas fa-chevron-down expand-icon"></i>
-            </div>
-            <div class="work-details">
-                <ul>
-                    <li>Transitioned NEEV to online sales during COVID-19</li>
-                    <li>Managed social media strategy</li>
-                </ul>
+                <div class="work-details">
+                    <ul>
+                        <li>Successfully transitioned NEEV to online sales during the COVID-19 pandemic by establishing and maintaining their e-commerce website using Shopify, achieving a 50% increase in sales revenue.</li>
+                        <li>Managed comprehensive social media strategy across Facebook, LinkedIn, and Instagram platforms to enhance brand visibility and customer engagement.</li>
+                    </ul>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Education Section -->
-    <section class="section reveal" id="education">
+    <section id="education" class="section">
         <h2 class="section-title">Education</h2>
-        <div class="grid-container">
+        <div class="education-content reveal">
             <div class="education-item">
                 <div class="education-header">
                     <div>
-                        <div class="item-company">The University of Edinburgh</div>
-                        <div class="item-title">MSc in Data Science</div>
-                        <div class="item-meta">2024-2025 | UK</div>
+                        <h4>The University of Edinburgh</h4>
+                        <p>MSc in Data Science</p>
+                        <p>Sept 2024 – Aug 2025 | United Kingdom</p>
+                        <p>Grade: Merit (Expected)</p>
                     </div>
-                    <img src="UoE.jpg" alt="University Logo" class="university-logo">
+                    <img src="edinburgh-logo.png" alt="University of Edinburgh" class="university-logo">
                 </div>
             </div>
-            <!-- Add other education items -->
+            <div class="education-item">
+                <div class="education-header">
+                    <div>
+                        <h4>Vellore Institute of Technology</h4>
+                        <p>BTech in Electrical and Electronics Engineering</p>
+                        <p>July 2017 – June 2021 | India</p>
+                        <p>CGPA: 8.47/10</p>
+                    </div>
+                    <img src="vit-logo.png" alt="Vellore Institute of Technology" class="university-logo">
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- Projects Section -->
-    <section class="section reveal" id="projects">
-        <h2 class="section-title">Projects</h2>
-        <p class="section-subtitle">Things I've built</p>
-        <div class="projects-grid">
-            <!-- Project cards remain same as before -->
+    <section id="projects" class="section">
+        <h2 class="section-title">Featured Projects</h2>
+        <h3 class="section-subtitle">Things I've built</h3>
+        <div class="grid-container reveal">
+            <div class="project-item">
+                <h4>BlazeDB Query Engine</h4>
+                <p>Developed a high-performance Java-based SQL engine supporting 5 core database operators including scan, select, join, aggregate, and sort operations with comprehensive type-safe tuple handling. The engine implements advanced query optimization techniques such as predicate pushdown and left-deep join ordering, achieving 40% faster query response times compared to baseline implementations.</p>
+                <div class="project-tags">
+                    <span>Java</span>
+                    <span>SQL</span>
+                    <span>Query Optimization</span>
+                    <span>Database Systems</span>
+                </div>
+                <a href="https://github.com/asutoshsamal/blazedb" class="btn btn-secondary" target="_blank"><i class="fas fa-code"></i> View Code</a>
+            </div>
+            <div class="project-item">
+                <h4>Cloud-Native Analytics Pipeline on AWS</h4>
+                <p>Built a comprehensive serverless data analytics pipeline leveraging AWS cloud services including S3 for storage, Glue for ETL processing, Athena for querying, and QuickSight for visualization. The pipeline processes Superstore sales data with automated ETL workflows, intelligent data partitioning strategies, and interactive business intelligence dashboards for real-time insights.</p>
+                <div class="project-tags">
+                    <span>AWS</span>
+                    <span>S3</span>
+                    <span>Glue</span>
+                    <span>Athena</span>
+                    <span>QuickSight</span>
+                    <span>ETL</span>
+                </div>
+                <a href="https://github.com/asutoshsamal/aws-pipeline" class="btn btn-secondary" target="_blank"><i class="fas fa-code"></i> View Code</a>
+            </div>
         </div>
     </section>
 
-    <!-- Hobbies Section -->
-    <section class="section reveal" id="hobbies">
+    <section id="hobbies" class="section">
         <h2 class="section-title">Hobbies & Interests</h2>
-        <p class="section-subtitle">What I enjoy outside of work</p>
-        <div class="hobbies-container">
-            <div class="hobby-card">
-                <div class="hobby-icon">🏓</div>
-                <h3 class="hobby-title">Table Tennis</h3>
-                <p class="hobby-description">
-                    Passionate about the fast-paced strategy and precision of table tennis. Love the mental challenge and quick reflexes required in competitive play.
-                </p>
+        <h3 class="section-subtitle">What I enjoy outside of work</h3>
+        <div class="grid-container reveal">
+            <div class="skill-card">
+                <h4>🏓 Table Tennis</h4>
+                <p>Passionate about the fast-paced strategy and precision of table tennis. Love the mental challenge and quick reflexes required in competitive play.</p>
             </div>
-            <div class="hobby-card">
-                <div class="hobby-icon">🏐</div>
-                <h3 class="hobby-title">Volleyball</h3>
-                <p class="hobby-description">
-                    Enjoy the teamwork and coordination aspects of volleyball. It's a great way to stay active and build strong connections with teammates.
-                </p>
+            <div class="skill-card">
+                <h4>🏐 Volleyball</h4>
+                <p>Enjoy the teamwork and coordination aspects of volleyball. It's a great way to stay active and build strong connections with teammates.</p>
             </div>
-            <div class="hobby-card">
-                <div class="hobby-icon">🏏</div>
-                <h3 class="hobby-title">Cricket</h3>
-                <p class="hobby-description">
-                    Cricket enthusiast who appreciates the strategic depth and tradition of the game. Love both playing and analyzing match strategies.
-                </p>
+            <div class="skill-card">
+                <h4>🏏 Cricket</h4>
+                <p>Cricket enthusiast who appreciates the strategic depth and tradition of the game. Love both playing and analyzing match strategies.</p>
             </div>
         </div>
     </section>
 
-    <!-- Awards Section -->
-    <section class="section reveal" id="awards">
-        <h2 class="section-title">Awards</h2>
-        <div class="grid-container">
-            <!-- Award cards -->
+    <section id="activities" class="section">
+        <h2 class="section-title">Extra-Curricular Activities</h2>
+        <div class="grid-container reveal">
+            <div class="activity-item">
+                <h4>RIVIERA Annual Cultural Fest - VIT</h4>
+                <p>Student Coordinator</p>
+                <p>2018-2020 | India</p>
+                <ul>
+                    <li>Served as Student Coordinator for the Proshows committee during RIVIERA, VIT's prestigious International Annual Sports and Cultural Festival.</li>
+                    <li>Successfully managed end-to-end event logistics including artist coordination, stage setup, technical arrangements, and operational management, ensuring seamless event execution and high client satisfaction.</li>
+                </ul>
+            </div>
+            <div class="activity-item">
+                <h4>NEEV (NGO)</h4>
+                <p>Volunteer</p>
+                <p>2020-2021 | India</p>
+                <ul>
+                    <li>Mentored over 50 children in Mathematics and English, achieving an impressive 80% pass rate in their school examinations through personalized tutoring and educational support.</li>
+                    <li>Led a community health initiative team to vaccinate more than 100 cattle against lumpy skin disease, contributing to livestock welfare and community health in the region.</li>
+                    <li>Organized and executed four large-scale food distribution drives, providing essential support to over 1,000 individuals and families in need during challenging times.</li>
+                </ul>
+            </div>
         </div>
     </section>
 
-    <!-- Certifications Section -->
-    <section class="section reveal" id="certifications">
+    <section id="awards" class="section">
+        <h2 class="section-title">Awards & Recognition</h2>
+        <div class="grid-container reveal">
+            <div class="award-card">
+                <h4 class="award-title">FSGBU Pacesetter Award for Q2FY23</h4>
+                <p>Recognized for exceptional commitment and significant impact on the success of the client's Data Lake Migration project.</p>
+                <p>January 2023</p>
+            </div>
+            <div class="award-card">
+                <h4 class="award-title">Pat on the Back Award</h4>
+                <p>Received for outstanding individual contribution to project success.</p>
+                <p>September 2022</p>
+            </div>
+            <div class="award-card">
+                <h4 class="award-title">TIMKEN Global Scholar</h4>
+                <p>Awarded scholarship in recognition of academic and extracurricular excellence for undergraduate studies.</p>
+                <p>January 2017</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="certifications" class="section">
         <h2 class="section-title">Certifications</h2>
-        <div class="grid-container">
-            <!-- Certification cards -->
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section class="section reveal" id="contact">
-        <h2 class="section-title">Contact</h2>
-        <div class="contact-container">
-            <!-- Contact content -->
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <div class="footer-content">
-            <div class="social-links">
-                <!-- Social links -->
+        <div class="grid-container reveal">
+            <div class="cert-card">
+                <h4 class="cert-title">Oracle Cloud Infrastructure Foundations</h4>
+                <p>Oracle Certification</p>
+                <p>June 2022</p>
             </div>
-            <p style="color: var(--text-secondary);">© 2025 Asutosh Samal. Crafted with passion.</p>
+            <div class="cert-card">
+                <h4 class="cert-title">Neural Networks for Machine Learning</h4>
+                <p>University of Toronto</p>
+                <p>April 2019</p>
+            </div>
+            <div class="cert-card">
+                <h4 class="cert-title">Introduction to Graph Theory</h4>
+                <p>University of California San Diego</p>
+                <p>November 2018</p>
+            </div>
         </div>
+    </section>
+
+    <section id="contact" class="section">
+        <h2 class="section-title">Get In Touch</h2>
+        <h3 class="section-subtitle">Let's create something amazing together</h3>
+        <div class="contact-content reveal">
+            <p>I'm always open to discussing new opportunities, interesting projects, or just having a great conversation about data engineering and technology.</p>
+            <div class="hero-cta">
+                <a href="tel:+447365151087" class="btn btn-primary"><i class="fas fa-phone"></i> +44 7365151087</a>
+                <a href="mailto:[email protected]" class="btn btn-primary"><i class="fas fa-envelope"></i> Email Me</a>
+                <a href="https://www.linkedin.com/in/asutosh-samal" class="btn btn-primary" target="_blank"><i class="fas fa-linkedin"></i> LinkedIn</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="social-links">
+            <a href="https://github.com/asutoshsamal" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+            <a href="https://www.linkedin.com/in/asutosh-samal" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+            <a href="mailto:[email protected]"><i class="fas fa-envelope"></i> Email</a>
+        </div>
+        <p>© 2025 Asutosh Samal. Crafted with passion.</p>
     </footer>
 
     <script>
-        // Toggle experience details
-        function toggleWorkDetails(header) {
-            const details = header.parentElement.querySelector('.work-details');
-            const icon = header.querySelector('.expand-icon');
-            details.classList.toggle('expanded');
-            icon.classList.toggle('expanded');
-        }
-
-        // Smooth scrolling
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
+        // Smooth scrolling for nav links
+        document.querySelectorAll('.nav-link').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
                 e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                targetElement.scrollIntoView({ behavior: 'smooth' });
+
+                // Update active class
+                document.querySelectorAll('.nav-link').forEach(link => link.classList.remove('active'));
+                this.classList.add('active');
             });
         });
 
-        // Scroll reveal
+        // Dynamic navigation bar effect on scroll
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            nav.classList.toggle('scrolled', window.scrollY > 50);
+        });
+
+        // Reveal animations on scroll
         const revealElements = document.querySelectorAll('.reveal');
-        function reveal() {
-            revealElements.forEach(element => {
-                const windowHeight = window.innerHeight;
-                const elementTop = element.getBoundingClientRect().top;
-                if (elementTop < windowHeight - 150) {
-                    element.classList.add('active');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
                 }
             });
-        }
-        window.addEventListener('scroll', reveal);
-        reveal();
+        }, { threshold: 0.2 });
 
-        // Dynamic particles
-        const particlesContainer = document.getElementById('particles');
-        const particleCount = 50;
-        for (let i = 0; i < particleCount; i++) {
-            const particle = document.createElement('div');
-            particle.className = 'particle';
-            particle.style.left = Math.random() * 100 + '%';
-            particle.style.animationDelay = Math.random() * 20 + 's';
-            particlesContainer.appendChild(particle);
-        }
+        revealElements.forEach(element => observer.observe(element));
+
+        // Experience section toggle
+        document.querySelectorAll('.item-header').forEach(header => {
+            header.addEventListener('click', () => {
+                const details = header.nextElementSibling;
+                const icon = header.querySelector('.expand-icon');
+                details.classList.toggle('expanded');
+                icon.classList.toggle('expanded');
+            });
+        });
     </script>
 </body>
 </html>
